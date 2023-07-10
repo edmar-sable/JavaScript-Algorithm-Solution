@@ -1,11 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Solution_02_02</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alogoritm_v2 6</title>
   </head>
-
-  /**
-  Grid Maximum Sum
+  <body>
+    <!-- Grid Maximum Sum
 
   The numbers are written on a 5*5 grid as shown below.
 
@@ -35,16 +36,46 @@
   19 13 30 13 19
 
   ▣ Output example 1
-  155
-
-  */
-
-  <body>
+  155 -->
     <script>
-      function solution() {
-        // Your solution here
+      function getMaxSum(grid) {
+        const n = grid.length;
+        let maxSum = 0;
+
+        for (let i = 0; i < n; i++) {
+          let rowSum = 0,
+            colSum = 0;
+          for (let j = 0; j < n; j++) {
+            rowSum += grid[i][j];
+            colSum += grid[j][i];
+          }
+          maxSum = Math.max(maxSum, rowSum, colSum);
+        }
+
+        let diag1Sum = 0,
+          diag2Sum = 0;
+        for (let i = 0; i < n; i++) {
+          diag1Sum += grid[i][i];
+          diag2Sum += grid[i][n - 1 - i];
+        }
+        maxSum = Math.max(maxSum, diag1Sum, diag2Sum);
+
+        return maxSum;
       }
-      console.log(solution());
+      const grid = [
+        [10, 13, 10, 12, 15],
+        [12, 39, 30, 23, 11],
+        [11, 25, 50, 53, 15],
+        [19, 27, 29, 37, 27],
+        [19, 13, 30, 13, 19],
+      ];
+      //rows  //column  //diagonal
+      //60    //71      //155
+      //115   //117     //134
+      //154   //149
+      //139   //138
+      //94    //87
+      console.log(getMaxSum(grid)); //Diagonal is 10 + 39 + 50 + 37 + 19 = 155.
     </script>
   </body>
 </html>

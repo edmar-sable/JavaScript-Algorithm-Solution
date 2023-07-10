@@ -1,11 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Solution_02_02</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alogorithm_v2 5</title>
   </head>
-
-  /**
-   get rank
+  <body>
+    <!-- get rank
 
    If the Korean score of N (1<=N<=100) students is input, the rank of each student is output in the input order.
    Write a program.
@@ -23,16 +24,20 @@
    87 89 92 100 76
 
    ▣ Output example 1
-   4 3 2 1 5
-
-   */
-
-  <body>
+   4 3 2 1 5 -->
     <script>
-      function solution() {
-        // Your solution here
+      function getRank(input, scores) {
+        const sortScores = [...scores].sort((a, b) => b - a); //Same as .sort(funtion(a,b){return a-b;});
+        const rank = [];
+        for (let i = 0; i < input; i++) {
+          const ranks = sortScores.indexOf(scores[i]) + 1;
+          rank.push(ranks);
+        }
+        return rank.join(' ');
       }
-      console.log(solution());
+      const input = 5;
+      const scores = [87, 89, 92, 100, 76];
+      console.log(getRank(input, scores)); //the output is (2 3 4 5 1)
     </script>
   </body>
 </html>

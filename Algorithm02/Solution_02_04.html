@@ -1,11 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Solution_02_02</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alogorithm_v2 4</title>
   </head>
-
-  /**
-   scoring
+  <body>
+    <!-- scoring
 
    An OX problem is a problem in which the answer is either correct or incorrect. built from multiple OX problems
    In order to give additional points to consecutively correct answers in the test, the score is calculated as follows:
@@ -41,16 +42,24 @@
    1 0 1 1 1 0 0 1 1 0
 
    ▣ Output example 1
-   10
-
-   */
-
-  <body>
+   10 -->
     <script>
-      function solution() {
-        // Your solution here
+      function scoring(input, answer) {
+        let score = 0;
+        let conRightAnswer = 0;
+        for (let i = 0; i < input; i++) {
+          if (answer[i] === 1) {
+            conRightAnswer++; //if the output is 6 the score is increament, if the conRightAnswer is increament the output is 10.
+            score += conRightAnswer;
+          } else {
+            conRightAnswer = 0;
+          }
+        }
+        return score;
       }
-      console.log(solution());
+      const input = 10;
+      const answer = [1, 0, 1, 1, 1, 0, 0, 1, 1, 0];
+      console.log(scoring(input, answer));
     </script>
   </body>
 </html>

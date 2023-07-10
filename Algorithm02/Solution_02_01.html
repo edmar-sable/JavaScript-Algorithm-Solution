@@ -1,11 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Solution_02_01</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algorithm_v2 1</title>
   </head>
-
-  /**
-  output large number
+  <body>
+    <!-- output large number
 
   Write a program that receives N (1<=N<=100) integers and outputs only the numbers that are greater than
   the previous number.
@@ -22,16 +23,22 @@
   7 3 9 5 6 12
 
   ▣ Output example 1
-  7 9 6 12
-
-  */
-
-  <body>
+  7 9 6 12 <script>
+      -->
     <script>
-      function solution() {
-        // Your solution here
+      function outputLargeNum(input, numbers) {
+        let output = numbers[0].toString();
+        for (let i = 0; i < input; i++) {
+          const num = numbers[i];
+          if (num > numbers[i - 1]) {
+            output += ' ' + num.toString();
+          }
+        }
+        return output;
       }
-      console.log(solution());
+      const input = 6;
+      const numbers = [7, 3, 9, 5, 6, 12];
+      console.log(outputLargeNum(input, numbers));
     </script>
   </body>
 </html>

@@ -1,10 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Solution_01_8</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algorithm 8</title>
   </head>
-
-  /**
+  <body>
+    <!--   
   seven dwarfs
   A crisis came to Snow White, who was living a peaceful life with the seven dwarfs, avoiding the queen.
   There were nine dwarves, not seven, who returned from work.
@@ -27,14 +29,32 @@
 
   ▣ Output example 1
   20 7 23 19 10 8 13
-  */
-
-  <body>
+   -->
     <script>
-      function solution() {
-        // Your solution here
+      function sumOfSevenDwarfs(heights) {
+        for (let i = 0; i < heights.length; i++) {
+          for (let j = i + 1; j < heights.length; j++) {
+            const excludedSum = heights[i] + heights[j];
+
+            let sum = 0;
+            const sevenDwarfs = [];
+
+            for (let k = 0; k < heights.length; k++) {
+              if (k !== i && k !== j) {
+                sum += heights[k];
+                sevenDwarfs.push(heights[k]);
+              }
+            }
+
+            if (sum === 100) {
+              return sevenDwarfs.join(' ');
+            }
+          }
+        }
+        return null;
       }
-      console.log(solution());
+      const heights = [20, 7, 23, 19, 10, 15, 25, 8, 13];
+      console.log(sumOfSevenDwarfs(heights));
     </script>
   </body>
 </html>

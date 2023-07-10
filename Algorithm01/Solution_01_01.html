@@ -1,33 +1,43 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Solution_01_1</title>
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algorithm 1</title>
+  </head>
+  <body>
+    <!-- minimum of three numbers
 
-        minimum of three numbers
+    Write a program that receives natural numbers A, B, and C less than 100 
+    and outputs the smallest of the three numbers.
+    (don't use sort)
 
-        Write a program that receives natural numbers A, B, and C less than 100 
-        and outputs the smallest of the three numbers.
-        (don't use sort)
+    ▣ Input description
+    The first line contains three natural numbers less than 100.
 
-        ▣ Input description
-        The first line contains three natural numbers less than 100.
+    ▣ Output Description
+    Print the smallest number on the first line.
 
-        ▣ Output Description
-        Print the smallest number on the first line.
+    ▣ Input Example 1
+    6 5 11
 
-        ▣ Input Example 1
-        6 5 11
+    ▣ Output example 1
+    5 -->
 
-        ▣ Output example 1
-        5
-
-    <body>
-        <script>
-           function solution(){
-            // Your solution here
-           }
-           console.log(solution())
-        </script>
-    </body>
+    <script>
+      function smallestNumber(a, b, c) {
+        const x = a;
+        const y = b;
+        const z = c;
+        if (x < y && y < z) {
+          return a;
+        } else if (y < x && y < z) {
+          return b;
+        } else if (z < x && z < y) {
+          return c;
+        }
+      }
+      console.log(smallestNumber(100, 75, 25));
+    </script>
+  </body>
 </html>

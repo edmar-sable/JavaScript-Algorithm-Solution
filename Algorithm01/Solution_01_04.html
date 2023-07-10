@@ -1,38 +1,41 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Solution_01_4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algorithm 4</title>
   </head>
-
-  Algorithm 4
-
-  Output the sum from 1 to N
-  
-  Write a program that, given a natural number N as input, 
-  prints the sum of the numbers from 1 to N.
-  
-  ▣ Input description
-  A natural number N less than 20 is entered in the first line.
-  ▣ Output Description
-  The first line prints the sum of numbers from 1 to N.
-  
-  ▣ Input Example 1
-  6
-  ▣ Output example 1
-  21
-  
-  ▣ Input Example 2
-  10
-  ▣ Output example 2
-  55
-  
-
   <body>
+    <!-- Output the sum from 1 to N
+
+    Write a program that, given a natural number N as input, 
+    prints the sum of the numbers from 1 to N.
+
+    ▣ Input description
+    A natural number N less than 20 is entered in the first line.
+    ▣ Output Description
+    The first line prints the sum of numbers from 1 to N.
+
+    ▣ Input Example 1
+    6
+    ▣ Output example 1
+    21
+
+    ▣ Input Example 2
+    10
+    ▣ Output example 2
+    55   
+  -->
     <script>
-      function solution() {
-        // Your solution here
+      function input(n) {
+        const x = n;
+        let sum = (x * (x + 1)) / 2;
+
+        for (let i = 1; i <= x; i++) {
+          return sum;
+        }
       }
-      console.log(solution());
+      console.log(input(10));
     </script>
   </body>
 </html>

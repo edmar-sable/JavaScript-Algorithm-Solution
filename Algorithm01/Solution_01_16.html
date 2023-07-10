@@ -1,11 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Solution_01_15</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algorithm 16</title>
   </head>
-
-  /**
-   Remove duplicate characters
+  <body>
+    <!--  Remove duplicate characters
    Write a program that removes duplicate characters when a single lowercase character string is input and outputs them.
    please.
    Each character in the stripped string retains its order in the original string.
@@ -21,16 +22,22 @@
 
    ▣ Output example 1
    kset
-
-   */
-
-
-  <body>
+   
+  
+  -->
     <script>
-      function solution() {
-        // Your solution here
+      function removeDuplicate(word) {
+        const uniqueChars = [];
+        for (let i = 0; i < word.length; i++) {
+          const char = word[i];
+          if (!uniqueChars.includes(char)) {
+            uniqueChars.push(char);
+          }
+        }
+        return uniqueChars.join('');
       }
-      console.log(solution());
+      const word = 'ksekkset';
+      console.log(removeDuplicate(word));
     </script>
   </body>
 </html>

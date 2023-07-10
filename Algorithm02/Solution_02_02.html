@@ -1,11 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Solution_02_02</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alogorithm_v2 2</title>
   </head>
-
-  /**
-   visible student
+  <body>
+    <!-- visible student
 
    A teacher has N (1<=N<=1000) students lined up. The height of students standing in a row is in front
 
@@ -26,16 +27,23 @@
    130 135 148 140 145 150 150 153
 
    ▣ Output example 1
-   5
-
-   */
-
-  <body>
+   5 -->
     <script>
-      function solution() {
-        // Your solution here
+      function visibleStudent(input, heights) {
+        let visible = 1; //this is array; start to one rather than 0
+        let maxHeight = heights[0]; //first student inline (130 height)
+        for (let i = 0; i < input; i++) {
+          const height = heights[i];
+          if (height > maxHeight) {
+            maxHeight = height;
+            visible++;
+          }
+        }
+        return visible;
       }
-      console.log(solution());
+      const input = 8;
+      const heights = [130, 135, 148, 140, 145, 150, 150, 153];
+      console.log(visibleStudent(input, heights));
     </script>
   </body>
 </html>

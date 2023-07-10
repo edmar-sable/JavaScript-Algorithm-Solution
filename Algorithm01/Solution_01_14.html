@@ -1,11 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Solution_01_14</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algorithm 14</title>
   </head>
-
-  /**
-  longest string
+  <body>
+    <!-- longest string
   Write a program that prints the longest string given N strings.
 
   ▣ Input description
@@ -25,16 +26,21 @@
   good
 
   ▣ Output example 1
-  beautiful
-  */
-
-
-  <body>
+  beautiful -->
     <script>
-      function solution() {
-        // Your solution here
+      function longString(input, longest) {
+        let str = '';
+        for (let i = 0; i < input; i++) {
+          const long = longest[i];
+          if (long.length > str.length) {
+            str = long;
+          }
+        }
+        return str;
       }
-      console.log(solution());
+      const input = 5;
+      const longest = ['teacher', 'time', 'student', 'beatiful', 'good'];
+      console.log(longString(input, longest));
     </script>
   </body>
 </html>

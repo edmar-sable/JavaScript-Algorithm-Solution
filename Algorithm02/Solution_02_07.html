@@ -1,11 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Solution_02_02</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algorithm_v2 7</title>
   </head>
-
-  /**
-  peak
+  <body>
+    <!--peak
 
   Map information is given on an N*N grid. Each grid is marked with the height of that region. each grid
   The number on the board that is greater than your top, bottom, left, and right numbers is the peak area.
@@ -43,16 +44,46 @@
   8 7 3 5 2
 
   ▣ Output example 1
-  10
-
-  */
-
-  <body>
+  10 -->
     <script>
-      function solution() {
-        // Your solution here
+      function countPeaks(input, grid) {
+        let count = 0;
+        const newGrid = [];
+
+        for (let i = 0; i < input + 2; i++) {
+          newGrid[i] = [];
+          for (let j = 0; j < input + 2; j++) {
+            newGrid[i][j] = 0;
+          }
+        }
+        for (let i = 0; i < input; i++) {
+          for (let j = 0; j < input; j++) {
+            newGrid[i + 1][j + 1] = grid[i][j];
+          }
+        }
+        for (let i = 1; i <= input; i++) {
+          for (let j = 1; j <= input; j++) {
+            if (
+              newGrid[i][j] > newGrid[i - 1][j] &&
+              newGrid[i][j] > newGrid[i + 1][j] &&
+              newGrid[i][j] > newGrid[i][j - 1] &&
+              newGrid[i][j] > newGrid[i][j + 1]
+            ) {
+              count++;
+            }
+          }
+        }
+        return count;
       }
-      console.log(solution());
+      const input = 5;
+      const grid = [
+        [5, 3, 7, 2, 3],
+        [3, 7, 1, 6, 1],
+        [7, 2, 5, 3, 4],
+        [4, 3, 6, 4, 1],
+        [8, 7, 3, 5, 2],
+      ];
+      console.log(countPeaks(input, grid));
     </script>
   </body>
 </html>

@@ -1,11 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Solution_01_15</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algorithm 17</title>
   </head>
-
-  /**
-  Remove duplicate words
+  <body>
+    <!-- Remove duplicate words
   Write a program that removes duplicate strings when N strings are input and outputs them.
   The output string retains the original input order.
 
@@ -27,17 +28,21 @@
   ▣ Output example 1
   good
   time
-  student
-
-  */
-
-
-  <body>
+  student -->
     <script>
-      function solution() {
-        // Your solution here
+      function removeDuplicate(input, word) {
+        const uniquePhrase = [];
+        for (let i = 0; i < input; i++) {
+          const phrase = word[i];
+          if (!uniquePhrase.includes(phrase)) {
+            uniquePhrase.push(phrase);
+          }
+        }
+        return uniquePhrase;
       }
-      console.log(solution());
+      const input = 5;
+      const word = ['good', 'time', 'good', 'time', 'student'];
+      console.log(removeDuplicate(input, word));
     </script>
   </body>
 </html>

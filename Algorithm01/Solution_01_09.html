@@ -1,11 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Solution_01_9</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algorithm 9</title>
   </head>
-
-  /**
-   A to #
+  <body>
+    <!--  A to #
    When an English word consisting of capital letters is entered, all ‘A’ included in the word are replaced with ‘#’ and output.
    Write a program.
 
@@ -19,16 +20,14 @@
    BANANA
 
    ▣ Output example 1
-   B#N#N#
-   */
-
-
-  <body>
+   B#N#N# -->
     <script>
-      function solution() {
-        // Your solution here
+      function replaceA(word) {
+        const repA = word.replace(/A/g, '#');
+        return repA;
       }
-      console.log(solution());
+      const word = 'BANANA';
+      console.log(replaceA(word));
     </script>
   </body>
 </html>

@@ -1,11 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Solution_02_02</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alogorithm_v2 3</title>
   </head>
-
-  /**
-  Rock Paper Scissors
+  <body>
+    <!-- Rock Paper Scissors
 
   A and B are playing a game of rock, paper, scissors. A total of N games are played, and if A wins, output A,
   If B wins, output B. In case of a tie, output D.
@@ -40,16 +41,31 @@
   B
   A
   B
-  D
-
-  */
-
-  <body>
+  D -->
     <script>
-      function solution() {
-        // Your solution here
+      function jackenpoy(rounds, player1, player2) {
+        const win = [];
+        for (let i = 0; i < rounds; i++) {
+          const p1 = player1[i];
+          const p2 = player2[i];
+          if (p1 === p2) {
+            win.push('D');
+          } else if (
+            (p1 === 1 && p2 === 3) ||
+            (p1 === 2 && p2 === 1) ||
+            (p1 === 3 && p2 === 2)
+          ) {
+            win.push('A');
+          } else {
+            win.push('B');
+          }
+        }
+        return win;
       }
-      console.log(solution());
+      const rounds = 5; //Nos. of Rounds
+      const player1 = [2, 3, 3, 1, 3];
+      const player2 = [1, 1, 2, 2, 3];
+      console.log(jackenpoy(rounds, player1, player2));
     </script>
   </body>
 </html>

@@ -1,40 +1,48 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Solution_01_2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algorithm 2</title>
   </head>
-
-  Algorithm 2
-
-  Determining Triangles
-  
-  Given the lengths of three sticks A, B, and C of different lengths, 
-  A triangle can be formed with these three sticks.
-  If yes, output “YES”, otherwise output “NO”.
-  
-  ▣ Input description
-  The first line gives the lengths of less than 100 different A, B, and C bars.
-  
-  ▣ Output Description
-  Print “YES” or “NO” on the first line.
-  
-  ▣ Input Example 1
-  6 7 11
-  ▣ Output example 1
-  YES
-  
-  ▣ Input Example 2
-  13 33 17
-  ▣ Output example 2
-  NO
-  
-
   <body>
+    <!-- Determining Triangles
+
+    Given the lengths of three sticks A, B, and C of different lengths, 
+    A triangle can be formed with these three sticks.
+    If yes, output “YES”, otherwise output “NO”.
+
+    ▣ Input description
+    The first line gives the lengths of less than 100 different A, B, and C bars.
+
+    ▣ Output Description
+    Print “YES” or “NO” on the first line.
+
+    ▣ Input Example 1
+    6 7 11 | 8 9 16 | 10 11 20
+    ▣ Output example 1
+    YES
+
+    ▣ Input Example 2
+    13 33 17
+    ▣ Output example 2
+    NO
+  -->
     <script>
-      function solution() {
-        // Your solution here
+      function checkIfTriangle(a, b, c) {
+        const x = a;
+        const y = b;
+        const z = c;
+        let result = a + b > c && a + c > b && b + c > a;
+
+        if (result === true) {
+          return 'Yes';
+        } else {
+          return 'No';
+        }
       }
-      console.log(solution());
+
+      console.log(checkIfTriangle(10, 11, 20));
     </script>
   </body>
 </html>

@@ -1,11 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Solution_01_13</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algorithm 13</title>
   </head>
-
-  /**
-  case conversion
+  <body>
+    <!-- case conversion
   Receives a string with both uppercase and lowercase letters, and converts uppercase letters to lowercase letters and lowercase letters to uppercase letters.
   Write a program that converts and outputs it.
 
@@ -19,16 +20,26 @@
   StuDY
 
   ▣ Output example 1
-  sTUdy
-  */
-
-
-  <body>
+  sTUdy 
+  
+-->
     <script>
-      function solution() {
-        // Your solution here
+      function caseConversion(word) {
+        let result = '';
+        for (let i = 0; i < word.length; i++) {
+          const str = word[i];
+          if (str >= 'a' && str <= 'z') {
+            result += str.toUpperCase();
+          } else if (str >= 'A' && str <= 'Z') {
+            result += str.toLowerCase();
+          } else {
+            return str;
+          }
+        }
+        return result;
       }
-      console.log(solution());
+      const word = 'EdmarSable';
+      console.log(caseConversion(word));
     </script>
   </body>
 </html>
